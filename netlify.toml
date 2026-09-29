@@ -17,13 +17,13 @@
 # happened to sit at /studio would win over the proxy.
 [[redirects]]
   from = "/studio/*"
-  to = "https://lmnop-site.netlify.app/studio/:splat"
+  to = "https://lmnop-2609-studio.netlify.app/studio/:splat"
   status = 200
   force = true
 
 # /studio with no trailing slash is a separate path and would not match the splat.
 [[redirects]]
   from = "/studio"
-  to = "https://lmnop-site.netlify.app/studio"
+  to = "https://lmnop-2609-studio.netlify.app/studio"
   status = 200
   force = true
