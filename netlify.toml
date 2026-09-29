@@ -7,14 +7,23 @@
 [build]
   publish = "."
 
-# Send /studio through to the app's own deploy. Replace the host below with the
-# studio site's Netlify address once both sites exist.
+# Send /studio through to the app's own deploy.
 #
 # 200 rather than 301 so the address bar keeps saying lmnop.app/studio — which is the
 # whole reason for the path: same ORIGIN, so the app keeps its IndexedDB, its local
 # settings and its installed PWA.
-# [[redirects]]
-#   from = "/studio/*"
-#   to = "https://REPLACE-ME.netlify.app/studio/:splat"
-#   status = 200
-#   force = true
+#
+# force is needed because this site publishes a real directory: without it a file that
+# happened to sit at /studio would win over the proxy.
+[[redirects]]
+  from = "/studio/*"
+  to = "https://lmnop-site.netlify.app/studio/:splat"
+  status = 200
+  force = true
+
+# /studio with no trailing slash is a separate path and would not match the splat.
+[[redirects]]
+  from = "/studio"
+  to = "https://lmnop-site.netlify.app/studio"
+  status = 200
+  force = true
