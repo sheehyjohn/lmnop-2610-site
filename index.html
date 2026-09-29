@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>lmnop</title>
+<meta name="description" content="One document, and every way of looking at it. A mindmap, a document, a whiteboard and a dozen other views of the same thing — on your machine, in your browser, and on your phone." />
+<link rel="icon" href="/icon-192.png" />
+<meta property="og:title" content="lmnop" />
+<meta property="og:description" content="One document, and every way of looking at it." />
+<meta property="og:image" content="/icon-512.png" />
+<style>
+  :root {
+    --bg: #09090b;
+    --panel: #18181b;
+    --line: #27272a;
+    --text: #e4e4e7;
+    --dim: #a1a1aa;
+    --faint: #71717a;
+    --cyan: #22d3ee;
+    --pink: #ec4899;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+  a { color: inherit; }
+
+  /* ---- header ---- */
+  header { padding: 56px 0 0; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand img { width: 36px; height: 36px; border-radius: 8px; }
+  .brand span { font-size: 20px; font-weight: 600; letter-spacing: -0.01em; }
+
+  /* ---- hero ---- */
+  h1 {
+    margin: 40px 0 0;
+    font-size: clamp(32px, 6vw, 52px);
+    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+  }
+  h1 em { font-style: normal; color: var(--cyan); }
+  .lede { margin: 20px 0 0; max-width: 60ch; font-size: clamp(16px, 2.2vw, 19px); color: var(--dim); }
+
+  .cta { margin: 32px 0 0; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 18px; border-radius: 8px;
+    background: var(--cyan); color: #06181c;
+    font-weight: 600; font-size: 15px; text-decoration: none;
+    transition: filter .15s ease;
+  }
+  .btn:hover { filter: brightness(1.1); }
+  .note { font-size: 13px; color: var(--faint); }
+
+  /* ---- diagram ---- */
+  .diagram { margin: 64px 0 0; padding: 28px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); }
+  .diagram svg { display: block; width: 100%; height: auto; }
+  .caption { margin: 18px 0 0; font-size: 14px; color: var(--faint); text-align: center; }
+
+  /* ---- views ---- */
+  h2 { margin: 72px 0 0; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); font-weight: 600; }
+  .views { margin: 24px 0 0; display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+  .view {
+    display: flex; align-items: center; gap: 10px;
+    padding: 14px; border: 1px solid var(--line); border-radius: 10px;
+    font-size: 14px; color: var(--dim);
+  }
+  .view svg { flex: none; color: var(--cyan); }
+
+  /* ---- points ---- */
+  .points { margin: 32px 0 0; display: grid; gap: 28px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .point h3 { margin: 0 0 6px; font-size: 16px; font-weight: 600; }
+  .point p { margin: 0; font-size: 15px; color: var(--dim); }
+
+  /* ---- footer ---- */
+  footer { margin: 88px 0 0; padding: 24px 0 56px; border-top: 1px solid var(--line); font-size: 13px; color: var(--faint); display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: space-between; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .btn:active { transform: translateY(1px); }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="brand">
+      <img src="/icon-192.png" alt="" />
+      <span>lmnop</span>
+    </div>
+  </header>
+
+  <main>
+    <h1>One document, and <em>every way</em> of looking at it.</h1>
+
+    <p class="lede">
+      A mindmap and a document are not two files that have to be kept in step. They are
+      two ways of seeing the same thing. lmnop keeps one document and lets you look at
+      it as a map, a page, a board, a whiteboard, a timeline — and change it from any
+      of them.
+    </p>
+
+    <div class="cta">
+      <a class="btn" href="/studio">
+        Open the studio
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <span class="note">In development. Best on a laptop or tablet.</span>
+    </div>
+
+    <!-- One document, several projections. Swap for a real screenshot when there is
+         one worth showing; until then this says the same thing without pretending. -->
+    <div class="diagram">
+      <svg viewBox="0 0 640 220" role="img" aria-label="One document shown as a mindmap, a page, a board and a whiteboard">
+        <g stroke="#3f3f46" stroke-width="1.5" fill="none">
+          <path d="M320 74 C320 110, 110 104, 110 140" />
+          <path d="M320 74 C320 110, 250 104, 250 140" />
+          <path d="M320 74 C320 110, 390 104, 390 140" />
+          <path d="M320 74 C320 110, 530 104, 530 140" />
+        </g>
+
+        <rect x="248" y="26" width="144" height="48" rx="10" fill="#22d3ee" />
+        <text x="320" y="56" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif" font-size="16" font-weight="600" fill="#06181c">document</text>
+
+        <g fill="#18181b" stroke="#3f3f46" stroke-width="1.5">
+          <rect x="50" y="140" width="120" height="56" rx="10" />
+          <rect x="190" y="140" width="120" height="56" rx="10" />
+          <rect x="330" y="140" width="120" height="56" rx="10" />
+          <rect x="470" y="140" width="120" height="56" rx="10" />
+        </g>
+
+        <g stroke="#22d3ee" stroke-width="1.6" fill="none" stroke-linecap="round">
+          <!-- map -->
+          <circle cx="98" cy="160" r="4" /><circle cx="84" cy="178" r="4" /><circle cx="112" cy="178" r="4" />
+          <path d="M98 164 L86 174M98 164 L110 174" />
+          <!-- page -->
+          <path d="M232 158h36M232 166h36M232 174h24" />
+          <!-- board -->
+          <path d="M366 156v26M384 156v26M402 156v26" />
+          <!-- whiteboard -->
+          <path d="M508 176c10-22 22 6 32-14" />
+        </g>
+
+        <g font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#71717a" text-anchor="middle">
+          <text x="134" y="182">mindmap</text>
+          <text x="282" y="182">page</text>
+          <text x="424" y="182">board</text>
+          <text x="562" y="182">canvas</text>
+        </g>
+      </svg>
+      <p class="caption">Change it in one place. It is changed in all of them.</p>
+    </div>
+
+    <h2>Some of the views</h2>
+    <div class="views">
+      <div class="view">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5v4M12 11.5 6.5 16.8M12 11.5l5.5 5.3"/></svg>
+        Mindmap
+      </div>
+      <div class="view">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3h12v18H6z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>
+        Document
+      </div>
+      <div class="view">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 14c2-5 5 2 8-4"/></svg>
+        Whiteboard
+      </div>
+      <div class="view">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 4v16M12 4v16M19 4v16"/></svg>
+        Status board
+      </div>
+      <div class="view">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8"/></svg>
+        Presentation
+      </div>
+      <div class="view">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v10"/><rect x="9" y="3" width="6" height="10" rx="3"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4"/></svg>
+        Workshop
+      </div>
+    </div>
+
+    <h2>What it is for</h2>
+    <div class="points">
+      <div class="point">
+        <h3>Thinking, not filing</h3>
+        <p>
+          The point of notes is the model you end up holding in your head. lmnop is built
+          at the scale where the structure of an idea still fits on a screen — and stays
+          visible while you work on it.
+        </p>
+      </div>
+      <div class="point">
+        <h3>Yours, on your machine</h3>
+        <p>
+          Everything is stored locally first, so it opens instantly and keeps working
+          with no connection. When there is one, your devices catch each other up.
+        </p>
+      </div>
+      <div class="point">
+        <h3>In a room with people</h3>
+        <p>
+          Workshop mode runs a live transcript beside the map, so a conversation and the
+          structure it is producing are on screen at the same time.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <span>lmnop — in development, 2026</span>
+    <span><a href="/studio">Open the studio</a></span>
+  </footer>
+
+</div>
+</body>
+</html>

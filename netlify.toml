@@ -1,0 +1,20 @@
+# The marketing site is the ROOT of lmnop.app. The app is a separate deploy, reached
+# at /studio, so that freezing the app does not freeze the site — a blog post must
+# never require a deploy of a local-first CRDT workbench.
+#
+# Publishes this folder as-is: no build step, because a landing page with four icons
+# and a diagram does not need one, and something with no build cannot fail to build.
+[build]
+  publish = "."
+
+# Send /studio through to the app's own deploy. Replace the host below with the
+# studio site's Netlify address once both sites exist.
+#
+# 200 rather than 301 so the address bar keeps saying lmnop.app/studio — which is the
+# whole reason for the path: same ORIGIN, so the app keeps its IndexedDB, its local
+# settings and its installed PWA.
+# [[redirects]]
+#   from = "/studio/*"
+#   to = "https://REPLACE-ME.netlify.app/studio/:splat"
+#   status = 200
+#   force = true
