@@ -13,17 +13,20 @@
 # whole reason for the path: same ORIGIN, so the app keeps its IndexedDB, its local
 # settings and its installed PWA.
 #
-# force is needed because this site publishes a real directory: without it a file that
-# happened to sit at /studio would win over the proxy.
-[[redirects]]
-  from = "/studio/*"
-  to = "https://lmnop-2609-studio.netlify.app/studio/:splat"
-  status = 200
-  force = true
-
-# /studio with no trailing slash is a separate path and would not match the splat.
+# ORDER MATTERS. Netlify takes the first matching rule, and "/studio/*" matches bare
+# "/studio" too, with an empty splat — which proxies to ".../studio/", which the app
+# 308s back to "/studio", which the browser resolves against lmnop.app. An infinite
+# loop. The exact rule therefore has to come first.
 [[redirects]]
   from = "/studio"
   to = "https://lmnop-2609-studio.netlify.app/studio"
+  status = 200
+  force = true
+
+# force because this site publishes a real directory: without it a file that happened
+# to sit at /studio would win over the proxy.
+[[redirects]]
+  from = "/studio/*"
+  to = "https://lmnop-2609-studio.netlify.app/studio/:splat"
   status = 200
   force = true
